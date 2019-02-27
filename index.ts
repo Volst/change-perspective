@@ -9,6 +9,8 @@ export type QuadPoints = [
   number
 ];
 
+export type SinglePoint = [number, number];
+
 function dim(x: number[][]) {
   let y: number[];
   if (typeof x === 'object') {
@@ -365,7 +367,7 @@ function getNormalizationCoefficients(
   return matX as QuadPoints;
 }
 
-function applyTransform(coeffs: QuadPoints, x: number, y: number): QuadPoints {
+function applyTransform(coeffs: QuadPoints, x: number, y: number): SinglePoint {
   const coordinates = [];
   coordinates[0] =
     (coeffs[0] * x + coeffs[1] * y + coeffs[2]) /
@@ -373,7 +375,7 @@ function applyTransform(coeffs: QuadPoints, x: number, y: number): QuadPoints {
   coordinates[1] =
     (coeffs[3] * x + coeffs[4] * y + coeffs[5]) /
     (coeffs[6] * x + coeffs[7] * y + 1);
-  return coordinates as QuadPoints;
+  return coordinates as SinglePoint;
 }
 
 export default function fixPerspective(srcPts: QuadPoints, dstPts: QuadPoints) {
