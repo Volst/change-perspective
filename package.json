@@ -1,6 +1,6 @@
 {
   "name": "change-perspective",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Extremely small JavaScript library for creating and applying perspective transforms",
   "license": "MIT",
   "author": "Kees Kluskens <kees@volst.nl>",
