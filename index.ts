@@ -256,7 +256,7 @@ function round(num: number) {
   return Math.round(num * 10000000000) / 10000000000;
 }
 
-function getNormalizationCoefficients(
+export function getNormalizationCoefficients(
   srcPts: QuadPoints,
   dstPts: QuadPoints,
   isInverse?: boolean
